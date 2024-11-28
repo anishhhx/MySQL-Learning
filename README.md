@@ -6,8 +6,8 @@ Here, you'll find a comprehensive collection of SQL scripts covering fundamental
 
 What you'll learn:
 
-DDL (Data Definition Language): Create, modify, and delete database structures.
-DQL (Data Query Language): Retrieve data from databases using SELECT statements.
+DDL (Data Definition Language): Create, modify, and delete database structures.<br>
+DQL (Data Query Language): Retrieve data from databases using SELECT statements.<br>
 DML (Data Manipulation Language): Insert, update, and delete data.
 TCL (Transaction Control Language): Manage transactions using COMMIT, ROLLBACK, and SAVEPOINT.
 SQL Constraints: Enforce data integrity with primary keys, foreign keys, unique constraints, and more.
