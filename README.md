@@ -2,7 +2,7 @@
 
 Welcome to my Anish-MySQL Learning Repository!
 <br>
-Here, you'll find a comprehensive collection of SQL scripts covering fundamental to advanced MySQL concepts. I'm using XAMPP to set up a local MySQL environment, making it easy for you to follow along.
+Here, you'll find a comprehensive collection of SQL scripts covering fundamental to advanced MySQL concepts. <br>I'm using XAMPP to set up a local MySQL environment, making it easy for you to follow along.
 
 What you'll learn:
 
