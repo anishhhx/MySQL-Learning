@@ -1,0 +1,36 @@
+login command
+Mysql -u root -p
+1.DDL = Data Definition Language
+schema = structure
+Database = Collection of tables
+table = collection of rows and columns
+1.Create database dbname;
+eg,
+Create database xyz;
+
+2.drop database dbname;
+eg.
+Drop database xyz;
+3.show databases
+4.use dbname;
+use xyz;
+5.Create table tablename(col1 type,col2 type,colN type);
+type=Datatype=type of data
+number = int
+text = text /  varchar
+mix data = text/varchar
+date = date
+decimal value = double/number
+eg.
+Create table student(rno int,name text,dob date);
+6.drop table tablename
+eg.
+drop table student;
+7.show tables
+8.describe tablename
+eg.
+describe student;
+9.rename table oldname to newname
+eg.
+Rename table student to mystudent;
+10.truncate table tablename;
