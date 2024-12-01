@@ -1,0 +1,156 @@
+# Mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.28-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> Create database xyz;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> Create database arun;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> Create database molly;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| arun               |
+| dptest             |
+| information_schema |
+| insys              |
+| insys_andheri      |
+| insys_chembur      |
+| insys_thane        |
+| insystest100       |
+| insysvesteam       |
+| ipl                |
+| jtest              |
+| molly              |
+| mydb               |
+| mysql              |
+| nishil             |
+| performance_schema |
+| phpbatch           |
+| phpmyadmin         |
+| pythonbatch        |
+| record_company     |
+| safwan             |
+| sqlbatch           |
+| test               |
+| ttest              |
+| ves2               |
+| vesteam            |
+| wptest             |
+| wptest2            |
+| wptest3            |
+| wptest4            |
+| xyz                |
++--------------------+
+31 rows in set (0.014 sec)
+
+MariaDB [(none)]> drop database arun;
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [(none)]> drop database molly;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dptest             |
+| information_schema |
+| insys              |
+| insys_andheri      |
+| insys_chembur      |
+| insys_thane        |
+| insystest100       |
+| insysvesteam       |
+| ipl                |
+| jtest              |
+| mydb               |
+| mysql              |
+| nishil             |
+| performance_schema |
+| phpbatch           |
+| phpmyadmin         |
+| pythonbatch        |
+| record_company     |
+| safwan             |
+| sqlbatch           |
+| test               |
+| ttest              |
+| ves2               |
+| vesteam            |
+| wptest             |
+| wptest2            |
+| wptest3            |
+| wptest4            |
+| xyz                |
++--------------------+
+29 rows in set (0.001 sec)
+
+MariaDB [(none)]> use xyz;
+Database changed
+MariaDB [xyz]> Create table student(rno int,name text,dob date);
+Query OK, 0 rows affected (0.017 sec)
+
+MariaDB [xyz]> Create table employee(empid int,empname varchar(20),salary int,doj date);
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [xyz]> show tables;
++---------------+
+| Tables_in_xyz |
++---------------+
+| employee      |
+| student       |
++---------------+
+2 rows in set (0.001 sec)
+
+MariaDB [xyz]> drop table employee;
+Query OK, 0 rows affected (0.014 sec)
+
+MariaDB [xyz]> use insysvesteam;
+Database changed
+MariaDB [insysvesteam]> show tables;
++------------------------+
+| Tables_in_insysvesteam |
++------------------------+
+| result                 |
+| student                |
+| users                  |
++------------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [insysvesteam]> describe student;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| rno   | int(11) | YES  |     | NULL    |       |
+| name  | text    | YES  |     | NULL    |       |
+| age   | int(11) | YES  |     | NULL    |       |
+| dob   | date    | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+4 rows in set (0.010 sec)
+
+MariaDB [insysvesteam]> Rename table student to mystudent;
+Query OK, 0 rows affected (0.010 sec)
+
+MariaDB [insysvesteam]> show tables;
++------------------------+
+| Tables_in_insysvesteam |
++------------------------+
+| mystudent              |
+| result                 |
+| users                  |
++------------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [insysvesteam]>
