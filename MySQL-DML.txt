@@ -1,53 +1,32 @@
-use database imdb;
+DML = Data Manipulation Language
+1.insert
+insert into tablename values (v1,v2,vN);
+eg.
+Insert into mystudent values (1,"Divya","2000-10-10");
 
-INSERT INTO movie VALUES
-('tt0012494','Der müde Tod',2017,'2017-06-09',97,'Germany','$ 12156','German','Decla-Bioscop AG'),
-('tt0038733','A Matter of Life and Death',2017,'2017-12-08',104,'UK','$ 124241','English, French, Russian','The Archers'),
-('tt0060908','Le roi de coeur',2018,'2018-06-08',102,'France, Italy','$ 18130','French, English, German','Fildebroc'),
-('tt0069049','The Other Side of the Wind',2018,'2018-11-02',122,'France, Iran, USA',NULL,'English, German','Royal Road Entertainment'),
-('tt0071145','Ankur',2019,'2019-01-02',131,'India',NULL,'Hindi','Blaze Film Enterprises'),
-('tt0082620','Kiss Daddy Goodbye',2018,'2018-11-23',92,'USA',NULL,'English','Pendragon Film'),
-('tt0083907','The Evil Dead',2018,'2018-10-31',85,'USA','$ 2893091','English','Renaissance Pictures'),
-('tt0085953','Mo tai',2019,'2019-10-22',84,'Hong Kong',NULL,'Cantonese','Lo Wei Motion Picture Company'),
-('tt0095857','Pestonjee',2019,'2019-02-22',125,'India',NULL,'Hindi','National Film Development Corporation of India (NFDC)'),
-('tt0097268','Ek Din Achanak',2018,'2018-12-30',105,'India',NULL,'Hindi','National Film Development Corporation'),
-('tt0100275','La Telenovela Errante',2018,'2018-09-06',80,'Chile','$ 3624','Spanish','Poetastros'),
-('tt0116851','Leila',2017,'2017-12-06',102,'Iran','$ 8231','Persian','Farabi Cinema Foundation'),
-('tt0137204','Joe Finds Grace',2017,'2017-04-22',83,'Canada',NULL,'English','Bradeway Pictures'),
-('tt0147855','Aashirwad',2019,'2019-03-09',146,'India',NULL,'Hindi','Film Enterprises'),
-('tt0192669','Teenage Space Vampires',2018,'2018-11-15',90,'Romania, Canada, USA',NULL,'English','Canarom Productions'),
-('tt0235166','Against All Hope',2017,'2017-10-20',90,'USA',NULL,'English',NULL),
-('tt0278422','Buttleman',2018,'2018-01-01',94,'USA',NULL,'English','Buttleman Productions LLC'),
-('tt0331314','Bunyan and Babe',2017,'2017-01-12',84,'USA, India','$ 72060','English','Exodus Film Group'),
-('tt0337383','Vaikai is Amerikos viesbucio',2017,'2017-03-09',88,'Soviet Union',NULL,'Lithuanian, Russian','Lietuvos Kinostudija'),
-('tt0339091','Gang of Roses',2019,'2019-09-20',94,'USA','$ 30497','English','Sleeping Giant Productions'),
-('tt0339736','The Evil Within',2017,'2017-08-30',98,'USA',NULL,'English','Supernova LLC'),
-('tt0347307','Kaminnyy khrest',2018,'2018-10-30',80,'Soviet Union',NULL,'Ukrainian','Dovzhenko Film Studios'),
-('tt0352314','Ek Hasina Thi',2019,'2019-01-02',120,'India',NULL,'Hindi, English','Bohra Bros Productions'),
-('tt0360556','Fahrenheit 451',2018,'2018-05-20',100,'USA',NULL,'English','HBO Films'),
-('tt0361953','The Nest of the Cuckoo Birds',2017,'2017-10-16',81,'USA',NULL,'English','Bert Williams Motion Pictures and Distributor'),
-('tt0365545','Nappily Ever After',2018,'2018-09-21',98,'USA',NULL,'English','Netflix'),
-('tt0385887','Motherless Brooklyn',2019,'2019-11-01',144,'USA','$ 9205026','English','Class 5 Films'),
-('tt0427543','A Million Little Pieces',2019,'2019-08-30',113,'USA','$ 49710','English','3Blackdot'),
-('tt0437086','Alita: Battle Angel',2019,'2019-02-06',122,'USA','$ 404852543','English, Spanish','Twentieth Century Fox'),
-('tt0441881','Danger Close: The Battle of Long Tan',2019,'2019-08-08',118,'Australia','$ 2034844','English','Deeper Water'),
-('tt0443474','Crazy',2017,'2017-01-19',106,'USA',NULL,'English','FN Crazy Film LLC'),
-('tt0448115','Shazam!',2019,'2019-04-05',132,'USA, Canada','$ 364571656','English, Spanish','Warner Bros.'),
-('tt0451201','Sludge',2017,'2017-09-19',95,'USA',NULL,'English','Xeno Films'),
-('tt0451279','Wonder Woman',2017,'2017-06-01',141,'USA, China, Hong Kong','$ 821847012','English, German, Dutch, French, Spanish, Chinese, Greek, Ancient (to 1453), North American Indian','Warner Bros.'),
-('tt0456407','Fakir of Venice',2019,'2019-02-08',87,'India',NULL,'English, Hindi','October Films'),
-('tt0460890','The Only Living Boy in New York',2017,'2017-08-11',89,'USA','$ 2550321','English','Amazon Studios'),
-('tt0490215','Silence',2017,'2017-01-01',161,'USA, UK, Taiwan, Japan, Mexico, Italy','$ 23737523','English, Japanese, Latin','SharpSword Films'),
-('tt0491175','Suburbicon',2017,'2017-11-24',105,'UK, USA','$ 12751667','English','Black Bear Pictures'),
-('tt0491203','Tulip Fever',2018,'2018-12-07',105,'UK, USA','$ 8381715','English','Worldview Entertainment'),
-('tt0493405','CHIPS',2017,'2017-03-24',100,'USA','$ 26800152','English, Spanish','Primate Pictures'),
-('tt0493407','Cook Off!',2017,'2017-11-17',98,'USA',NULL,'English',NULL),
-('tt0498381','Rings',2017,'2017-02-03',102,'USA','$ 83080890','English','Macari/Edelstein'),
-('tt0499469','Emilio',2017,'2017-02-17',102,'USA',NULL,'English, Spanish','Emilio Productions'),
-('tt0765465','The Legend of Secret Pass',2019,'2019-01-15',92,'USA',NULL,'English','JC2 Animated Entertainment'),
-('tt0800325','The Dirt',2019,'2019-03-22',107,'USA',NULL,'English','10th Street Entertainment'),
-('tt0835802','Krystal',2018,'2018-04-13',90,'USA','$ 37516','English','Dorian Media'),
-('tt0837563','Pet Sematary',2019,'2019-04-04',101,'USA, Canada','$ 112399944','english','Paramount Pictures'),
-('tt0858419','Bolden',2019,'2019-05-03',108,'USA',NULL,'English','King Bolden'),
-('tt0859635','Super Troopers 2',2018,'2018-06-15',99,'USA','$ 31626386','English','Votiv Films'),
-('tt0862930','Dukun',2018,'2018-04-05',108,'Malaysia',NULL,'Hokkien, Malay','Astro Shaw');
+Insert into mystudent(rno,name) values (2,'Vaishnavi');
+
+Insert into mystudent values (3,'Sai',NULL);
+
+Insert into mystudent values
+(4,'A','2001-10-30'),
+(5,'B','2010-1-3'),
+(6,'C','2009-10-10'),
+(7,'D','2001-6-25'),
+(8,'E','2001-5-30');
+
+2.Update
+Update tablename set colname=newvalue [where condition];
+
+eg.
+Update mystudent set dob='2010-10-10' where rno=2 ;
+
+update mystudent set name='John' ,dob='2002-2-2' where rno=3;
+
+Update mystudent set name='vicky' where rno=1 limit 1;
+
+3.Delete 
+Delete from tablename [where condition];
+
+eg.
+Delete from mystudent where rno=5;
