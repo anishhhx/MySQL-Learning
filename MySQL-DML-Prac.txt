@@ -1,0 +1,169 @@
+MariaDB [insystestdb]> select * from mystudent;
+Empty set (0.012 sec)
+
+MariaDB [insystestdb]> describe mystudent;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| rno   | int(11) | YES  |     | NULL    |       |
+| name  | text    | YES  |     | NULL    |       |
+| dob   | date    | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+3 rows in set (0.008 sec)
+
+MariaDB [insystestdb]> Insert into mystudent values (1,"Divya","2000-10-10");
+Query OK, 1 row affected (0.006 sec)
+
+MariaDB [insystestdb]> select * from student;
+ERROR 1146 (42S02): Table 'insystestdb.student' doesn't exist
+MariaDB [insystestdb]> select * from mystudent;
++------+-------+------------+
+| rno  | name  | dob        |
++------+-------+------------+
+|    1 | Divya | 2000-10-10 |
++------+-------+------------+
+1 row in set (0.000 sec)
+
+MariaDB [insystestdb]> Insert into mystudent values (1,"Divya","2000-10-10");
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [insystestdb]> select * from mystudent;
++------+-------+------------+
+| rno  | name  | dob        |
++------+-------+------------+
+|    1 | Divya | 2000-10-10 |
+|    1 | Divya | 2000-10-10 |
++------+-------+------------+
+2 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> Insert into mystudent values (2,'Vaishnavi');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [insystestdb]> Insert into mystudent(rno,name) values (2,'Vaishnavi');
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [insystestdb]> select * from mystudent;
++------+-----------+------------+
+| rno  | name      | dob        |
++------+-----------+------------+
+|    1 | Divya     | 2000-10-10 |
+|    1 | Divya     | 2000-10-10 |
+|    2 | Vaishnavi | NULL       |
++------+-----------+------------+
+3 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> Insert into mystudent values (3,'Sai',NULL);
+Query OK, 1 row affected (0.005 sec)
+
+MariaDB [insystestdb]> select * from mystudent;
++------+-----------+------------+
+| rno  | name      | dob        |
++------+-----------+------------+
+|    1 | Divya     | 2000-10-10 |
+|    1 | Divya     | 2000-10-10 |
+|    2 | Vaishnavi | NULL       |
+|    3 | Sai       | NULL       |
++------+-----------+------------+
+4 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> Insert into mystudent values
+    -> (4,'A','2001-10-30'),
+    -> (5,'B','2010-1-3'),
+    -> (6,'C','2009-10-10'),
+    -> (7,'D','2001-6-25'),
+    -> (8,'E','2001-5-30');
+Query OK, 5 rows affected (0.006 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+MariaDB [insystestdb]> select * from mystudent;
++------+-----------+------------+
+| rno  | name      | dob        |
++------+-----------+------------+
+|    1 | Divya     | 2000-10-10 |
+|    1 | Divya     | 2000-10-10 |
+|    2 | Vaishnavi | NULL       |
+|    3 | Sai       | NULL       |
+|    4 | A         | 2001-10-30 |
+|    5 | B         | 2010-01-03 |
+|    6 | C         | 2009-10-10 |
+|    7 | D         | 2001-06-25 |
+|    8 | E         | 2001-05-30 |
++------+-----------+------------+
+9 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> Update mystudent set dob='2010-10-10' where rno=2 ;
+Query OK, 1 row affected (0.008 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [insystestdb]> select * from mystudent;
++------+-----------+------------+
+| rno  | name      | dob        |
++------+-----------+------------+
+|    1 | Divya     | 2000-10-10 |
+|    1 | Divya     | 2000-10-10 |
+|    2 | Vaishnavi | 2010-10-10 |
+|    3 | Sai       | NULL       |
+|    4 | A         | 2001-10-30 |
+|    5 | B         | 2010-01-03 |
+|    6 | C         | 2009-10-10 |
+|    7 | D         | 2001-06-25 |
+|    8 | E         | 2001-05-30 |
++------+-----------+------------+
+9 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> update mystudent set name='John' ,dob='2002-2-2' where rno=3;
+Query OK, 1 row affected (0.004 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [insystestdb]> select * from mystudent;
++------+-----------+------------+
+| rno  | name      | dob        |
++------+-----------+------------+
+|    1 | Divya     | 2000-10-10 |
+|    1 | Divya     | 2000-10-10 |
+|    2 | Vaishnavi | 2010-10-10 |
+|    3 | John      | 2002-02-02 |
+|    4 | A         | 2001-10-30 |
+|    5 | B         | 2010-01-03 |
+|    6 | C         | 2009-10-10 |
+|    7 | D         | 2001-06-25 |
+|    8 | E         | 2001-05-30 |
++------+-----------+------------+
+9 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> Update mystudent set name='vicky' where rno=1 limit 1;
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [insystestdb]> select * from mystudent;
++------+-----------+------------+
+| rno  | name      | dob        |
++------+-----------+------------+
+|    1 | vicky     | 2000-10-10 |
+|    1 | Divya     | 2000-10-10 |
+|    2 | Vaishnavi | 2010-10-10 |
+|    3 | John      | 2002-02-02 |
+|    4 | A         | 2001-10-30 |
+|    5 | B         | 2010-01-03 |
+|    6 | C         | 2009-10-10 |
+|    7 | D         | 2001-06-25 |
+|    8 | E         | 2001-05-30 |
++------+-----------+------------+
+9 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> Delete from mystudent where rno=5;
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [insystestdb]> select * from mystudent;
++------+-----------+------------+
+| rno  | name      | dob        |
++------+-----------+------------+
+|    1 | vicky     | 2000-10-10 |
+|    1 | Divya     | 2000-10-10 |
+|    2 | Vaishnavi | 2010-10-10 |
+|    3 | John      | 2002-02-02 |
+|    4 | A         | 2001-10-30 |
+|    6 | C         | 2009-10-10 |
+|    7 | D         | 2001-06-25 |
+|    8 | E         | 2001-05-30 |
++------+-----------+------------+
+8 rows in set (0.000 sec)
