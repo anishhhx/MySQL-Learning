@@ -1,0 +1,33 @@
+MariaDB [insystestdb]> Select rno,name from mystudent;
++------+-----------+
+| rno  | name      |
++------+-----------+
+|    1 | vicky     |
+|    1 | Divya     |
+|    2 | Vaishnavi |
+|    3 | John      |
+|    4 | A         |
+|    6 | C         |
+|    7 | D         |
+|    8 | E         |
++------+-----------+
+8 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> Select * from mystudent where rno>5;
++------+------+------------+
+| rno  | name | dob        |
++------+------+------------+
+|    6 | C    | 2009-10-10 |
+|    7 | D    | 2001-06-25 |
+|    8 | E    | 2001-05-30 |
++------+------+------------+
+3 rows in set (0.000 sec)
+
+MariaDB [insystestdb]> Select * from mystudent where dob>'2005-01-01';
++------+-----------+------------+
+| rno  | name      | dob        |
++------+-----------+------------+
+|    2 | Vaishnavi | 2010-10-10 |
+|    6 | C         | 2009-10-10 |
++------+-----------+------------+
+2 rows in set (0.000 sec)
